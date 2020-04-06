@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Unisect Vnu';
+    src:
+        url('../fonts/UnisectVnu/UnisectVnu.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+    font-family: "Unisect Vnu Bold";
+    src:
+        url('../fonts/UnisectVnu/UnisectVnu-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+    font-family: 'Maven Pro';
+    src:
+        url('../fonts/MavenPro/MavenPro-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+    font-family: 'Maven Pro Bold';
+    src:
+        url('../fonts/MavenPro/MavenPro-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}

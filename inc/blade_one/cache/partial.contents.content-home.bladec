@@ -1,0 +1,37 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<?php while(have_posts()): ?> <?php echo static::e(the_post()); ?>
+
+<div class="container-fluid">
+ <div class="card-columns">
+ <div class="card">
+ <?php echo static::e(getPostThumbnail()); ?>
+
+ <div class="card-body">
+ <h4 class="card-title">
+ <a href="<?php echo static::e(the_permalink()); ?>">
+ <?php echo static::e(the_title()); ?>
+
+ </a>
+ </h4>
+ <p class="card-text">
+ <?php echo static::e(the_excerpt()); ?>
+
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<?php endwhile; ?>
+<?php $this->stopSection(); ?>
+<?php $this->startPush('style'); ?>
+ <style>
+ .tets{
+ background: #fff;
+ }
+ </style>
+<?php $this->stopPush(); ?>
+<?php $this->startPush('script'); ?>
+
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.full-width'); } ?>

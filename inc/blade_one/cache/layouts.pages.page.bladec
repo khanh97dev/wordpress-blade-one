@@ -1,0 +1,3 @@
+<?php echo static::e(get_header()); ?>
+
+<?php echo static::e(get_footer()); ?>

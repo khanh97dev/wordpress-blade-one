@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html <?php echo static::e(language_attributes()); ?> >
+
+<head>
+ <meta charset="<?php echo static::e(bloginfo( 'charset' )); ?>">
+ <meta name="site" content="<?php echo static::e(bloginfo( 'name' )); ?>">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/font-homepage.css">
+ <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/skin-homepage.css">
+ <?php /* hook wp header */ ?>
+ <?php echo static::e(wp_head()); ?>
+
+ <?php /* end */ ?>
+</head>
+<body <?php echo static::e(body_class('')); ?>>

@@ -1,0 +1,43 @@
+<nav class="navbar top-navbar navbar-expand-md navbar-light">
+ <!-- ============================================================== -->
+ <!-- Logo -->
+ <!-- ============================================================== -->
+ <div class="navbar-header">
+ <a class="navbar-brand" href="<?php echo static::e(home_url('/')); ?>">
+ <!-- Logo icon -->
+ <b>
+ <?php echo static::e(getCustomLogo()); ?>
+
+ </b>
+ </a>
+ </div>
+ <!-- ============================================================== -->
+ <!-- End Logo -->
+ <!-- ============================================================== -->
+ <div class="navbar-collapse">
+ <!-- ============================================================== -->
+ <!-- toggle and nav items -->
+ <!-- ============================================================== -->
+ <ul class="navbar-nav mr-auto mt-md-0">
+ <li class="nav-item dropdown mega-dropdown">
+ <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <span><i class="fa fa-align-left" aria-hidden="true"></i></span>
+ </a>
+ <?php echo static::e(getMenuMega('primary')); ?>
+
+ </li>
+ </ul>
+ <!-- ============================================================== -->
+ <!-- User profile and search -->
+ <!-- ============================================================== -->
+ <ul class="navbar-nav my-lg-0">
+ <!-- ============================================================== -->
+ <!-- Search -->
+ <!-- ============================================================== -->
+ <li class="nav-item search-box">
+ <a class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+ <?php echo $this->runChild('partial.forms.form-search'); ?>
+ </li>
+ </ul>
+ </div>
+ </nav>

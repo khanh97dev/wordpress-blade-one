@@ -1,0 +1,15 @@
+ <?php /* scripts  */ ?>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery-3.3.1.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.mousewheel.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/smoothscroll.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/swiper-4.3.5.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/wow.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.viewportchecker.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.animateNumber.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.fancybox.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/init.main.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/language.js"></script>
+
+</body>
+
+</html>

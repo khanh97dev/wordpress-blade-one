@@ -1,0 +1,3 @@
+<?php echo static::e('admin blade template'); ?>
+
+<h1>thong tin sinh vien</h1>

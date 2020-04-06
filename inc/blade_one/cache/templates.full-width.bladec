@@ -1,0 +1,10 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <?php echo static::e(the_post()); ?>
+
+ <?php echo static::e(the_title()); ?>
+
+ <?php echo static::e(the_content()); ?>
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.full-width'); } ?>

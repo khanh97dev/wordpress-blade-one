@@ -1,0 +1,3 @@
+<?php $this->startSection('footer-sub'); ?>
+ <footer class="footer text-center">© <?php echo date('Y') ?><?php echo bloginfo('name') ?>.</footer>
+<?php $this->stopSection(); ?>

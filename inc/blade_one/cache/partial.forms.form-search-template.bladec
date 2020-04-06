@@ -1,0 +1,19 @@
+<ul class="list-unstyled animated fadeInUp">
+ <?php while($the_query->have_posts()): ?> <?php echo static::e($the_query->the_post()); ?>
+
+ <li class="media">
+ <a href="<?php echo static::e(the_permalink()); ?>">
+ <div class="d-flex justify-content-around align-items-center">
+ <?php if(get_the_post_thumbnail_url()): ?>
+ <img class="d-flex mr-3" src="<?php echo static::e(get_the_post_thumbnail_url()); ?>" width="60" height="60" alt="Generic placeholder image">
+ <?php endif; ?>
+ <h5 class="mt-0 mb-1 mx-2"><?php echo static::e(the_title()); ?></h5>
+ <?php echo static::e(the_excerpt()); ?>
+
+ </div>
+ <div class="media-body">
+ </div>
+ </a>
+ </li>
+ <?php endwhile; ?>
+</ul>

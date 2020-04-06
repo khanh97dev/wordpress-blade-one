@@ -1,0 +1,54 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+ <?php echo $this->runChild('components.homepages.navigation'); ?>
+
+ <?php echo $this->runChild('components.homepages.header'); ?>
+
+ <?php if(get_theme_mod('setting_section_number_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-number'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_products_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-products'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_about_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-about'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_history_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-history'); ?>
+ <?php endif; ?>
+
+ <?php echo $this->runChild('components.homepages.section-news'); ?>
+
+ <?php if(get_theme_mod('setting_section_career_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-career'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_partner_visible')): ?>
+ <?php echo $this->runChild('components.homepages.section-partner'); ?>
+ <?php endif; ?>
+
+ <?php echo $this->runChild('partials.footer'); ?>
+
+ <?php echo $this->runChild('components.homepages.script'); ?>
+
+ <?php echo $this->runChild('partials.script'); ?>
+<?php $this->stopSection(); ?>
+
+
+<?php $this->startPush('scripts'); ?>
+<script>
+ const VueTest = new Vue({
+ el: '#something',
+ data: () => {
+ return {
+ something: 'text something'
+ }
+ }
+ })
+</script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layout.home'); } ?>

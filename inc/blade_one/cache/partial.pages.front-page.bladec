@@ -1,0 +1,23 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('main'); ?>
+ <?php echo $this->runChild('sections.homepages.navigation'); ?>
+
+ <?php echo $this->runChild('sections.homepages.header'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-number'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-products'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-about'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-history'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-news'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-career'); ?>
+
+ <?php echo $this->runChild('sections.homepages.section-partner'); ?>
+
+ <?php echo $this->runChild('sections.homepages.footer'); ?>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.front-page'); } ?>

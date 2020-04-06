@@ -1,0 +1,1 @@
+<?= view('sections.blogs.content') ?>

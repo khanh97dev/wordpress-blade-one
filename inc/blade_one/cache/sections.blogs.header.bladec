@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html <?php echo static::e(language_attributes()); ?> >
+<!-- Mirrored from www.vng.com.vn/article/about/history.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Dec 2018 11:45:47 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+ <meta charset="<?php echo static::e(bloginfo( 'charset' )); ?>">
+ <meta name="site" content="<?php echo static::e(bloginfo( 'name' )); ?>">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name=viewport content="width=device-width, initial-scale=1">
+ <link href="<?php echo static::e(bloginfo('template_url')); ?>/assets/css/skin-subpage.css" rel="stylesheet" media="screen" />
+ <style>
+ .posts__loading--hidden {
+ display: none;
+ }
+ /*setting_section_color_primary*/
+ .text-supernova,
+ .text-secondary,
+ .logo-text span,
+ section.s-products ul.products-list li a:before,
+ section.s-history .timeline ul li:hover a strong,
+ section.s-history .timeline ul li.active a strong
+ {
+ color: <?php echo static::e(get_theme_mod('setting_section_color_primary', "#72b448")); ?> !important
+ }
+ .bg-supernova, .bg-secondary, a.bt.bt-supernova,
+ div.navigation div.menu nav ul li ul li.active a,
+ div.navigation div.menu div.lang-selector .lang-open a:hover,
+ section.s-products ul.products-list li a:before {
+ background-color: <?php echo static::e(get_theme_mod('setting_section_color_primary', "#72b448")); ?>
+
+ }
+ section.s-history .timeline ul li:hover a:before,
+ div.navigation div.menu div.lang-selector .lang-open.active,
+ section.s-history .timeline ul li.active a:before{
+ border-color: <?php echo static::e(get_theme_mod('setting_section_color_primary', "#72b448")); ?>
+
+ }
+ div.navigation div.menu div.lang-selector .lang-open.active:before{
+ border-color: transparent transparent <?php echo static::e(get_theme_mod('setting_section_color_primary', "#72b448")); ?> transparent;
+ }
+ section.s-partner span.title svg path {
+ fill: <?php echo static::e(get_theme_mod('setting_section_color_primary', "#72b448")); ?>
+
+ }
+ /*setting_section_color_primary*/
+
+ /*setting_section_bg_primary*/
+ a.bt.bt-tango,
+ div.navigation div.lang-open.active a:hover,
+ h1:after,
+ hr.afterh1 {
+ background: <?php echo static::e(get_theme_mod('setting_section_bg_primary', '#3f88b5')); ?>;
+ }
+
+ .text-tango, .text-primary,
+ nav ul li a:hover,
+ nav ul li a.active,
+ nav ul li.nav-dad.active a,
+ nav ul li.nav-dad.active>ul>li a:hover,
+ nav ul li.nav-dad.active>ul>li a.active
+ {
+ color: <?php echo static::e(get_theme_mod('setting_section_bg_primary', '#3f88b5')); ?>
+
+ }
+ /*setting_section_bg_primary*/
+
+ /* section number circle */
+ section.s-numbers .number-circle .number-circle-inner {
+ color: <?php echo static::e(get_theme_mod('setting_section_number_circle' , '#3f88b5')); ?>;
+ }
+ /* section number circle */
+ </style>
+ <?php /* hook wp header */ ?>
+ <?php echo static::e(wp_head()); ?>
+
+ <?php /* end */ ?>
+</head>
+<body <?php echo static::e(body_class('')); ?>>

@@ -1,0 +1,115 @@
+<form class="app-search" action="<?php echo static::e(home_url('/')); ?>">
+ <input type="text" name="s"
+ <?php if(isset($_GET['s'])): ?>
+ value="<?php echo static::e($_GET['s']); ?>"
+ <?php endif; ?>
+ class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="fa fa-2x fa-close"></i></a>
+ <div class="container">
+ <div class="d-flex justify-content-center align-items-center">
+ <div id="search-result"></div>
+ </div>
+ </div>
+</form>
+<?php $this->startPush('style'); ?>
+<style type="text/css">
+.search-box .app-search input {
+ height: 100%;
+}
+
+div#search-result {
+ background: rgb(255, 255, 255);
+ max-height: 500px;
+ overflow-y: overlay;
+}
+
+.search-box .app-search .srh-btn{
+ top: 18px !important;
+}
+
+form.app-search i.fa.fa-refresh {
+ -webkit-animation: spin 2s infinite ease-in;
+ animation: spin 2s infinite ease-in;
+}
+
+
+@-ms-keyframes spin {
+ from {
+ -ms-transform: rotate(0deg);
+ }
+
+ to {
+ -ms-transform: rotate(360deg);
+ }
+}
+
+@-moz-keyframes spin {
+ from {
+ -moz-transform: rotate(0deg);
+ }
+
+ to {
+ -moz-transform: rotate(360deg);
+ }
+}
+
+@-webkit-keyframes spin {
+ from {
+ -webkit-transform: rotate(0deg);
+ }
+
+ to {
+ -webkit-transform: rotate(360deg);
+ }
+}
+
+@keyframes spin {
+ from {
+ transform: rotate(0deg);
+ }
+
+ to {
+ transform: rotate(360deg);
+ }
+}
+</style>
+<?php $this->stopPush(); ?>
+
+<?php $this->startPush('script'); ?>
+
+<script type="text/javascript">
+ jQuery(function () {
+ jQuery('input[name="s"]').keyup(function(e) {
+ clearTimeout(jQuery.data(this, 'timer'));
+ jQuery(this).data('timer', setTimeout(search, 500));
+ });
+ function toggleReload(addClass, removeClass){
+ var reload = jQuery('form.app-search').find('i.fa');
+ if(reload.hasClass(removeClass)){
+ reload.removeClass(removeClass);
+ reload.addClass(addClass);
+ }
+ }
+ function search() {
+ var value = jQuery('input[name="s"]').val();
+ var searchResults = jQuery('#search-result');
+ if (value.length < 3) {
+ return searchResults.html('')
+ };
+ toggleReload('fa-refresh','fa-close');
+ jQuery.post('<?php echo static::e(admin_url("admin-ajax.php")); ?>',
+ {
+ action : 'get_ajax_posts',
+ keyword:value
+ }
+ ).done(function(data){
+ toggleReload('fa-close','fa-refresh');
+ if(value && data){
+ searchResults.html(data)
+ }
+ else
+ searchResults.html('<?php echo static::e(__( "No Results Found", "vue_theme" )); ?>')
+ });
+ }
+ });
+</script>
+<?php $this->stopPush(); ?>

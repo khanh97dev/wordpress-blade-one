@@ -1,0 +1,35 @@
+<header class="s-header">
+ <div class="container">
+ <div class="pagename text-upper">
+ <?php if(is_archive()): ?>
+ <?php echo static::e(the_archive_title()); ?>
+
+ <?php else: ?>
+ <?php echo static::e(the_title()); ?>
+
+ <?php endif; ?>
+ </div>
+ <div class="breadscrum">
+ <ul id="breadcrumbs">
+ <li itemprop="url" itemprop=&#039;child&#039;>
+ <a href="<?php echo static::e(bloginfo('url')); ?>" itemprop="url" rel=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+ <g id="home">
+ <polygon points="204,471.75 204,318.75 306,318.75 306,471.75 433.5,471.75 433.5,267.75 510,267.75 255,38.25 0,267.75     76.5,267.75 76.5,471.75   " fill="#FFFFFF" />
+ </g>
+ </svg><span class="breadscrum-item">
+ <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?><?php echo static::e(__('Home page', TEXT_DOMAIN_THEME)); ?><?php else: ?><?php echo static::e(__('Trang chủ', TEXT_DOMAIN_THEME)); ?><?php endif; ?>
+ </span>
+ </a>
+ </li>
+ <?php if(is_archive()): ?>
+ <li itemprop="url" itemprop=&#039;child&#039;><a href="#" itemprop="url" rel=""><span class="breadscrum-item"><?php echo static::e(single_cat_title()); ?></span></a></li>
+ <?php elseif(is_single()): ?>
+ <li itemprop="url" itemprop=&#039;child&#039;><a href="<?php echo static::e(get_category_link( get_the_category()[0]->term_id )); ?>" itemprop="url" rel=""><span class="breadscrum-item"><?php echo static::e(get_the_category()[0]->name); ?></span></a></li>
+ <li itemprop="url" itemprop=&#039;child&#039;><a href="#" itemprop="url" rel=""><span class="breadscrum-item"><?php echo static::e(the_title()); ?></span></a></li>
+ <?php else: ?>
+ <li itemprop="url" itemprop=&#039;child&#039;><a href="#" itemprop="url" rel=""><span class="breadscrum-item"><?php echo static::e(the_title()); ?></span></a></li>
+ <?php endif; ?>
+ </ul>
+ </div>
+ </div>
+</header>

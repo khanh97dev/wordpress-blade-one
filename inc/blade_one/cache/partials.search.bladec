@@ -1,0 +1,14 @@
+<?php 
+ $something = get_theme_mod('something', 'value default');
+ ?>
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<?php if($something): ?>
+<p>
+ <?php echo static::e($something); ?>
+
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, et odit esse sequi nisi labore aliquid doloribus totam neque laborum eius quidem asperiores reprehenderit veniam, dolor delectus hic soluta nam?
+</p>
+<?php endif; ?>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layout.default'); } ?>

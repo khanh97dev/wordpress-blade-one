@@ -1,0 +1,4 @@
+<?php $this->startPush('footer-script'); ?>
+ <script type="text/javascript" src="<?php bloginfo('template_url') ?>/static/js/main.js"></script>
+ <script type="text/javascript" src="<?php bloginfo('template_url') ?>/static/js/custom.js"></script>
+<?php $this->stopPush(); ?>

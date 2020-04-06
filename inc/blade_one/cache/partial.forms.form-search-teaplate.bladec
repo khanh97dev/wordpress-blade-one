@@ -1,0 +1,5 @@
+<?php while($the_query->have_posts()): ?> <?php echo static::e($the_query->the_post()); ?>
+
+ <h2><a href="<?php echo static::e(esc_url( post_permalink() )); ?>"><?php echo static::e(the_title()); ?></a></h2>
+<?php endwhile; ?>
+

@@ -1,0 +1,38 @@
+<div class="stickyside">
+ <?php if(is_active_sidebar( 'first-sidebar' )): ?>
+ <?php 
+ dynamic_sidebar( 'first-sidebar' )
+ ?>
+ <?php endif; ?>
+ <div class="modal">
+ <div class="modal-dialog" role="document">
+ <div class="modal-content">
+ <div class="modal-header">
+ <h5 class="modal-title">Modal title</h5>
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ <span aria-hidden="true">&times;</span>
+ </button>
+ </div>
+ <div class="modal-body">
+ <p>Modal body text goes here.</p>
+ </div>
+ <div class="modal-footer">
+ <button type="button" class="btn btn-primary">Save changes</button>
+ <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="list-group" id="top-menu">
+ <a href="#1" class="list-group-item active">Title will be 1</a>
+ <a href="#22" class="list-group-item">Title will be 2</a>
+ <a href="#3" class="list-group-item">Title will be 3</a>
+ <a href="#4" class="list-group-item">Title will be 4</a>
+ <a href="#5" class="list-group-item">Title will be 5</a>
+ <a href="#6" class="list-group-item">Title will be 6</a>
+ <a href="#7" class="list-group-item">Title will be 7</a>
+ <a href="#8" class="list-group-item">Title will be 8</a>
+ <a href="#9" class="list-group-item">Title will be 9</a>
+ <a href="#10" class="list-group-item">Title will be 10</a>
+ </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html <?php echo static::e(language_attributes()); ?> >
+
+<head>
+ <meta charset="<?php echo static::e(bloginfo( 'charset' )); ?>">
+ <meta name="site" content="<?php echo static::e(bloginfo( 'name' )); ?>">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/font-homepage.css">
+ <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/skin-homepage.min.css">
+ <?php /* <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/ma5-menu.min.css"> */ ?>
+ <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/style.css">
+
+ <?php echo $this->runChild('sections.homepages.style'); ?>
+
+ <?php echo static::e(wp_head()); ?>
+
+</head>
+<body <?php echo static::e(body_class('')); ?>>
+ <?php echo $this->runChild('sections.homepages.navigation'); ?>
+
+ <?php echo $this->runChild('sections.homepages.header'); ?>
+
+ <?php if(get_theme_mod('setting_section_number_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-number'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_products_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-products'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_about_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-about'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_history_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-history'); ?>
+ <?php endif; ?>
+
+ <?php echo $this->runChild('sections.homepages.section-news'); ?>
+
+ <?php if(get_theme_mod('setting_section_career_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-career'); ?>
+ <?php endif; ?>
+
+ <?php if(get_theme_mod('setting_section_partner_visible')): ?>
+ <?php echo $this->runChild('sections.homepages.section-partner'); ?>
+ <?php endif; ?>
+
+ <?php echo $this->runChild('partials.footer'); ?>
+
+ <?php echo $this->runChild('sections.homepages.script'); ?>
+
+ <?php echo $this->runChild('partials.script'); ?>
+
+ <?php echo static::e(wp_footer()); ?>
+
+</body>
+
+</html>

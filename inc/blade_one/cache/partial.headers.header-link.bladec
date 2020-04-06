@@ -1,0 +1,4 @@
+<?php $this->startPush('header-link'); ?>
+ <link rel="profile" href="http://gmpg.org/xfn/11">
+ <?php echo $this->yieldPushContent("style"); ?>
+<?php $this->stopPush(); ?>

@@ -1,0 +1,28 @@
+ <footer class="s-footer bg-steelgray">
+ <div class="container f-mavenpro">
+ <div class="row">
+ <div class="footer-copyright col-12 text-center text-light">
+ Copyright &copy; <?php echo static::e(date('Y')); ?> <a class="text-supernova" href="<?php echo static::e(bloginfo('url')); ?>">Vihas</a>. All right reserved.
+ </div>
+ </div>
+ </div>
+ </footer>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery-3.3.1.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.mousewheel.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/smoothscroll.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/swiper-4.3.5.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/wow.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/waterfall.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.animateNumber.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.fancybox.min.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/jquery.twbsPagination.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/activeMenu.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/init.sub.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/language.js"></script>
+ <script src="<?php echo static::e(bloginfo('template_url')); ?>/assets/js/vportal.js"></script>
+ <?php echo static::e(wp_footer()); ?>
+
+</body>
+<!-- Mirrored from www.vng.com.vn/article/about/history.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Dec 2018 11:45:57 GMT -->
+
+</html>

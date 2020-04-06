@@ -1,0 +1,60 @@
+<!-- Section Career -->
+<style scoped>
+ section.s-career{
+ position: relative;
+ }
+ section.s-career::after {
+ z-index: -1;
+ content: '';
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ top: 0;
+ background: url(<?php echo static::e(get_theme_mod('setting_section_career', 'https://img.zing.vn/products/vng/skin-2018/images/bg/scareer.jpg')['img']); ?>) center center no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ overflow: hidden;
+ filter: brightness(0.25);
+ }
+</style>
+<section class="s-career">
+ <div class="container text-center">
+ <h1 class="text-supernova editable f-unisect text-center box-ani slideInDown">
+ <?php if( function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ CAREER OPPORTUNITIES
+ <?php else: ?>
+ CƠ HỘI NGHỀ NGHIỆP
+ <?php endif; ?>
+ </h1>
+ <p class="text-silver f-mavenpro p-t-20 container m-auto text-center box-ani slideInDown">
+ <?php if( get_theme_mod('setting_section_career')['content_en'] && function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ <?php echo static::e(get_theme_mod('setting_section_career')['content_en']); ?>
+
+ <?php elseif( get_theme_mod('setting_section_career')['content_vi']): ?>
+ <?php echo static::e(get_theme_mod('setting_section_career')['content_vi']); ?>
+
+ <?php else: ?>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis eos molestias dignissimos rem.
+ <?php endif; ?>
+ </p>
+ <a href="
+ <?php if( get_theme_mod('setting_section_career')['link_en']  && function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ <?php echo static::e(get_theme_mod('setting_section_career', '#')['link_en']); ?>
+
+ <?php elseif(get_theme_mod('setting_section_career', '#')['link']): ?>
+ <?php echo static::e(get_theme_mod('setting_section_career', '#')['link']); ?>
+
+ <?php else: ?>
+ #
+ <?php endif; ?>
+ "
+ class="bt bt-lg bt-supernova bt-o-secondary f-40 f-mavenpro p-h-80 p-v-30 m-t-40 m-b-30 box-ani slideInUp">
+ <?php if( function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ IMMEDIATE APPLICATION
+ <?php else: ?>
+ ỨNG TUYỂN NGAY
+ <?php endif; ?>
+ </a>
+ </div>
+</section>
+<!-- .Section Career -->

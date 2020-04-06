@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+ <meta charset="<?php bloginfo( 'charset' ); ?>">
+ <meta name="site" content="<?php bloginfo( 'name' ); ?>">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <?php echo $this->runChild('partial.header-link'); ?>
+ <?php wp_head(); ?>
+</head>
+<body <?php body_class('fix-header card-no-border logo-center') ?>>
+ <div class="preloader">
+ <svg class="circular" viewBox="25 25 50 50">
+ <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+ </div>
+ <?php echo $this->runChild('partial.header-sub'); ?>

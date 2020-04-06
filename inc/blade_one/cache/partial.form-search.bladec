@@ -1,0 +1,7 @@
+<form class="app-search" action="<?php echo static::e(home_url('/')); ?>">
+ <input type="text" name="s"
+ <?php if($_GET['s']): ?>
+ value="<?php echo static::e($_GET['s']); ?>"
+ <?php endif; ?>
+ class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+</form>

@@ -1,0 +1,29 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<div class="row">
+ <div class="col-12">
+ <!-- Row -->
+ <div class="row">
+ <div class="card-columns">
+ <?php while(have_posts()): ?>
+ <?php echo static::e(the_post()); ?>
+
+ <!-- Card -->
+ <div class="card">
+ <?php echo static::e(getPostThumbnail()); ?>
+
+ <div class="card-body">
+ <h4 class="card-title"><?php echo static::e(the_title()); ?></h4>
+ <p class="card-text"><?php echo static::e(the_excerpt()); ?></p>
+ <a href="<?php echo static::e(the_permalink()); ?>" class="btn btn-primary"><?php echo static::e(__('More','vue_theme')); ?></a>
+ </div>
+ </div>
+ <!-- Card -->
+ <?php endwhile; ?>
+ </div>
+ </div>
+ <!-- Row -->
+ </div>
+</div>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.master'); } ?>

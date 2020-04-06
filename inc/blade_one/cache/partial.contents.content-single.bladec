@@ -1,0 +1,22 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<div class="row">
+ <div class="col-lg-9 col-xlg-10 col-md-8">
+ <div class="card mb-3">
+ <h3 class="card-header bg-info text-white text-center"><?php echo static::e(the_title()); ?></h3>
+ <div class="card-body">
+ <?php while(have_posts()): ?> <?php echo static::e(the_post()); ?>
+
+ <?php echo static::e(the_content()); ?>
+
+ <?php endwhile; ?>
+ <?php  wp_link_pages()  ?>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-3 col-xlg-2 col-md-4">
+ <?php echo $this->runChild("sections.blogs.sidebar"); ?>
+ </div>
+</div>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.blogs'); } ?>

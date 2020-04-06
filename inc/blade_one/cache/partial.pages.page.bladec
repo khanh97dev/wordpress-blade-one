@@ -1,0 +1,25 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('main'); ?>
+<article>
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-12 align-content-center">
+ <!-- Row -->
+ <div class="row">
+ <div class="container">
+ <?php echo static::e(the_post()); ?>
+
+ <p>
+ <?php echo static::e(the_content()); ?>
+
+ </p>
+ </div>
+ </div>
+ <!-- Row -->
+ </div>
+ </div>
+ </div>
+</article>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.blogs'); } ?>

@@ -1,0 +1,128 @@
+<section class="s-products">
+ <div class="container-fluid">
+ <div class="row">
+ <div class="product-content col-12 col-xl-6 p-0 bg-supernova">
+ <div class="container-fluid p-0">
+ <div class="swiper-container product-container">
+ <div class="swiper-wrapper p-b-20">
+ <?php if(get_theme_mod('setting_section_product')): ?>
+ <?php $__currentLoopData = get_theme_mod( 'setting_section_product'); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ <div class="swiper-slide">
+ <div class="product-title text-capitalize text-center f-mavenpro f-20 p-v-20 f-unisect">
+ <?php echo static::e($item['title_en']); ?>
+
+ </div>
+ <div class="box-product"><img class="product-item-1 product-item-1-phonea"
+ src="<?php echo static::e(wp_get_attachment_image_url( $item['img'], 'full' )); ?>" alt="<?php echo static::e($item['title_en']); ?>"></div>
+ <div class="col-11 col-md-8 m-auto f-mavenpro f-20 text-center">
+ <?php echo static::e($item['content_en']); ?>
+
+ </div>
+ </div>
+ <?php else: ?>
+ <div class="swiper-slide">
+ <div class="product-title text-capitalize text-center f-mavenpro f-20 p-v-20 f-unisect">
+ <?php echo static::e($item['title']); ?>
+
+ </div>
+ <div class="box-product"><img class="product-item-1 product-item-1-phonea"
+ src="<?php echo static::e(wp_get_attachment_image_url( $item['img'], 'full' )); ?>" alt="<?php echo static::e($item['title']); ?>"></div>
+ <div class="col-11 col-md-8 m-auto f-mavenpro f-20 text-center">
+ <?php echo static::e($item['content']); ?>
+
+ </div>
+ </div>
+ <?php endif; ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php else: ?>
+ <div class="swiper-slide">
+ <div class="product-title text-center f-mavenpro f-20 p-v-20">
+ Tiêu Đề
+ </div>
+ <div class="box-product"><img class="product-item-1 product-item-1-phonea"
+ src="<?php echo static::e(bloginfo('template_url').'/assets/images/communication.png'); ?>" alt="">
+ </div>
+ <div class="col-11 col-md-8 m-auto f-mavenpro f-20 text-center">
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, iure?
+ </div>
+ </div>
+ <?php endif; ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="product-nav col-12 col-xl-6 p-l-30 o-hidden"><a class="h1href" href="#">
+ <h1 class="text-steelgray f-unisect">
+ <?php if( function_exists('pll_the_languages') &&
+ pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ PRODUCT
+ <?php else: ?>
+ SẢN PHẨM
+ <?php endif; ?>
+ </h1>
+ </a>
+ <hr class="afterh1">
+ <p class="text-bluebayoux f-mavenpro p-t-40 p-b-20">
+ <?php echo static::e(get_theme_mod('setting_section_product_text_right')); ?>
+
+ </p>
+ <ul class="products-list">
+ <?php if(get_theme_mod('setting_section_product')): ?>
+ <?php 
+ $index = 0;
+ ?>
+ <?php $__currentLoopData = get_theme_mod( 'setting_section_product'); $this->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <?php 
+ $index++;
+ ?>
+ <?php if($index == 1): ?>
+ <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ <li class="box-ani slideInLeft">
+ <a href="javascript:;"
+ class="product-item product-item-0<?php echo static::e($index); ?> active"><span class="product-item">
+ <img src="<?php echo static::e(get_template_directory_uri().'/assets/images/01.svg'); ?>"
+ alt="<?php echo static::e($item['title_en']); ?>">
+ </span>
+ <span class="product-item-title text-capitalize"><?php echo static::e($item['title_en']); ?></span></a>
+ </li>
+ <?php else: ?>
+ <li class="box-ani slideInLeft">
+ <a href="javascript:;"
+ class="product-item product-item-0<?php echo static::e($index); ?> active"><span class="product-item">
+ <img src="<?php echo static::e(get_template_directory_uri().'/assets/images/02.svg'); ?>"
+ alt="<?php echo static::e($item['title']); ?>">
+ </span>
+ <span class="product-item-title text-capitalize"><?php echo static::e($item['title']); ?></span></a>
+ </li>
+ <?php endif; ?>
+ <?php else: ?>
+
+ <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
+ <li class="box-ani slideInLeft"><a href="javascript:;"
+ class="product-item product-item-0<?php echo static::e($index); ?>"><span class="product-item">
+ <img src="<?php echo static::e(get_template_directory_uri().'/assets/images/02.svg'); ?>"
+ alt="<?php echo static::e($item['title_en']); ?>">
+ </span><span class="product-item-title text-capitalize"><?php echo static::e($item['title_en']); ?></span></a>
+ </li>
+ <?php else: ?>
+ <li class="box-ani slideInLeft"><a href="javascript:;"
+ class="product-item product-item-0<?php echo static::e($index); ?>"><span class="product-item">
+ <img src="<?php echo static::e(get_template_directory_uri().'/assets/images/02.svg'); ?>"
+ alt="<?php echo static::e($item['title']); ?>">
+ </span><span class="product-item-title text-capitalize"><?php echo static::e($item['title']); ?></span></a>
+ </li>
+ <?php endif; ?>
+ <?php endif; ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php else: ?>
+ <li class="box-ani slideInLeft"><a href="javascript:;"
+ class="product-item product-item-01 active"><span class="product-item"><img
+ src="<?php echo static::e(get_template_directory_uri().'/assets/images/02.svg'); ?>" alt=""></span><span
+ class="product-item-title">Title</span></a></li>
+ <?php endif; ?>
+ </ul>
+ </div>
+ </div>
+ </div>
+</section>

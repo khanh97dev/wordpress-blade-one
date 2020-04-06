@@ -1,0 +1,1 @@
+<img style="height: 20px" class="card-img-top img-responsive" src="<?php echo static::e(get_the_post_thumbnail_url()); ?>" alt="Card image cap">

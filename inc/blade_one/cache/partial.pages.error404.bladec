@@ -1,0 +1,7 @@
+<?php echo static::e(get_header()); ?>
+
+
+<h1 class="text-center">
+ 404
+</h1>
+<?php echo static::e(get_footer()); ?>

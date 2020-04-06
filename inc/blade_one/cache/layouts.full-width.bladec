@@ -1,0 +1,5 @@
+<?php echo $this->runChild('partial.headers.header'); ?>
+<div class="wrapper page-wrapper" id="app">
+ <?php echo $this->yieldContent('content'); ?>
+</div><!-- #id .wrapper -->
+<?php echo $this->runChild('partial.footers.footer'); ?>

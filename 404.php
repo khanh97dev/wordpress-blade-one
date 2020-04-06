@@ -1,0 +1,1 @@
+<?= view('partials.404') ?>

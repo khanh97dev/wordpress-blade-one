@@ -1,0 +1,12 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <div class="container">
+ <div class="list-group">
+ <?php while(have_posts()): ?> <?php echo static::e(the_post()); ?>
+
+ <a href="<?php echo static::e(the_permalink()); ?>" class="list-group-item list-group-item-action list-group-item-primary"><?php echo static::e(the_title()); ?></a>
+ <?php endwhile; ?>
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('layouts.master'); } ?>

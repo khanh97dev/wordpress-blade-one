@@ -1,0 +1,60 @@
+.tabs {
+  position: relative;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+    display: none;
+}
+.tabs label {
+  display: block;
+    opacity:0.7;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #ccc;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  text-decoration: underline;
+    opacity:1;
+  -webkit-transition: all .25s ease;
+     -moz-transition: all .25s ease;
+      -ms-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 90%;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  left: 0;
+  background: #ccc;-webkit-box-shadow: #606060 6px 10px 8px;
+    -moz-box-shadow: #606060 6px 10px 8px;
+    box-shadow: #606060 6px 10px 8px;
+}
+.tabs [class="tabs"]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: #ccc;
+    text-decoration: underline;
+    opacity:1
+}
+.tabs [class^="tabs"]:checked ~ [class="tab-content"] {
+  display: block;
+}

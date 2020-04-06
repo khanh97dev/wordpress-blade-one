@@ -1,0 +1,9 @@
+<?php echo $this->runChild('partial.footers.footer-sub'); ?>
+<?php echo $this->runChild('partial.footers.footer-script'); ?>
+
+ <?php wp_footer(); ?>
+ <?php echo $this->yieldContent('footer-sub'); ?>
+ <?php echo $this->yieldPushContent('footer-script'); ?>
+ <?php echo $this->yieldPushContent('script'); ?>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?php 
+ $posts = \Inc\Query\GuestQuery::relatedQueryCat();
+ ?>
+<?php if($posts): ?>
+<section class="s-sub bg-wildsand">
+ <div class="container">
+ <div class="posts-list">
+ <h1 class="m-b-10"><?php echo static::e(__('Tin liên quan', TEXT_DOMAIN_THEME)); ?></h1>
+ <div class="row">
+ <?php $__currentLoopData = $posts; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="col-12 col-md-6 col-xl-4"><a href="<?php echo static::e(the_permalink( $post->ID )); ?>" title="<?php echo static::e($post->post_title); ?>" class="news-item m-b-30 box-ani slideInUp" data-wow-delay="0.6s">
+ <div class="news-thumb">
+ <img src="<?php echo static::e(get_post_image_url( $post->ID )); ?>" alt="<?php echo static::e($post->post_title); ?>">
+ </div>
+ <div class="news-info">
+ <div class="news-date f-unisect-bold text-center text-selyellow m-b-10"><?php echo static::e($post->post_date); ?></div>
+ <div class="news-title f-mavenpro text-center text-shuttlegray m-b-10">
+ <?php echo static::e($post->post_title); ?>
+
+ </div>
+ <div class="news-content f-mavenpro text-center text-shuttlegray">
+ <?php echo static::e(get_the_excerpt( $post->ID )); ?>
+
+ </div>
+ </div>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+</section>
+<?php endif; ?>
