@@ -1,1 +1,1 @@
-<?= view('partial.sidebars.sidebar') ?>
+<?= view('partials.sidebar') ?>

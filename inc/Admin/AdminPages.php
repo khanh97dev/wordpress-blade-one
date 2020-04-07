@@ -2,25 +2,28 @@
 namespace Inc\Admin;
 
 class AdminPages {
+    public $title;
+    public $slug;
 
-    private static $basePath = 'Inc\Admin\AdminPages';
-    private static $slugPage = 'theme-settings';
-    private static $title    = 'vihas theme';
     /**
-     *  2Start things up
+     *  start things up
      *
      * @since 1.0.0
      */
-    public function __construct() {
+    public function __construct($configs = array())
+    {
+        isset($configs['title'])
+            ? $this->title = $configs['title']
+            : $this->title = wp_get_theme();
+        isset($configs['slug'])
+            ? $this->slug = $configs['slug']
+            : $this->slug = 'theme-settings';
 
-        // We only need to register the admin panel on the back-end
+            // We only need to register the admin panel on the back-end
         if (is_admin()) {
-            if(method_exists($this,'add_admin_menu')){
-                add_action('admin_menu', array($this, 'add_admin_menu'));
-            }
-            if(method_exists($this,'register_settings')){
-                add_action('admin_init', array($this, 'register_settings'));
-            }
+            add_action('admin_menu', array($this, 'add_admin_menu'));
+            add_action('admin_init', array($this, 'register_settings'));
+            add_action('admin_print_scripts', array($this, 'add_scripts'));
         }
         add_action('admin_bar_menu', array($this, 'addAdminBar'), 1000);
     }
@@ -29,7 +32,7 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function get_theme_options() {
+    public function get_theme_options() {
         return get_option('theme_options');
     }
 
@@ -38,8 +41,8 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function get_theme_option($type, $id) {
-        $options = self::get_theme_options();
+    public function get_theme_option($type, $id) {
+        $options = $this->get_theme_options();
         if (isset($options[$type][$id])) {
             return $options[$type][$id];
         }
@@ -51,25 +54,24 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function add_admin_menu() {
-        $adminPage = add_menu_page(
+    public function add_admin_menu() {
+        add_menu_page(
             __('Page Title', TEXT_DOMAIN_THEME),
-            __(self::$title, TEXT_DOMAIN_THEME),
+            __($this->title, TEXT_DOMAIN_THEME),
             'manage_options',
-            self::$slugPage, /* id menu menu */
-            array(self::$basePath, 'create_admin_page')
+            $this->slug, /* id menu menu */
+            array($this, 'create_admin_page')
         );
-        add_action( "load-$adminPage", array(self::$basePath, 'add_scripts') );
     }
 
-    public static function add_admin_submenu() {
+    public function add_admin_submenu() {
         // add_submenu_page(
-        //     'theme-settings',
+        //     $this->slug,
         //     __('Page Title 2', TEXT_DOMAIN_THEME),
         //     __('Menu Title 2', TEXT_DOMAIN_THEME),
         //     'manage_options',
         //     'theme_settings_2',
-        //     array(self::$basePath, 'create_admin_page')
+        //     array($this, 'create_admin_page')
         // );
     }
 
@@ -81,13 +83,13 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function register_settings() {
-        register_setting('theme_options', 'theme_options', array(self::$basePath, 'arrThemeOption'));
+    public function register_settings() {
+        register_setting('theme_options', 'theme_options', array($this, 'arrThemeOption'));
     }
 
-    public static function add_scripts(){
+    public function add_scripts(){
         wp_enqueue_style( 'tabs', get_template_directory_uri() . '/static/css/admin/tabs.css' );
-        // wp_enqueue_script( 'custom-name', get_template_directory_uri() . '/path/to/test.js' );
+        wp_enqueue_script( 'app-admin-'.TEXT_DOMAIN_THEME, get_template_directory_uri() . '/static/js/admin.js' );
     }
 
     /**
@@ -95,7 +97,7 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function arrThemeOption($options) {
+    public function arrThemeOption($options) {
 
         // If we have options lets sanitize them
         $options['input'];
@@ -136,20 +138,20 @@ class AdminPages {
      *
      * @since 1.0.0
      */
-    public static function create_admin_page() {
+    public function create_admin_page() {
         return require_once 'admin-template.php';
     }
 
-    public static function addAdminBar()
+    public function addAdminBar()
     {
         global $wp_admin_bar;
         if(!is_super_admin() || !is_admin_bar_showing()) return;
         // Add Parent Menu
         $argsParent = array(
             'id' => 'theme-option',
-            'href' => admin_url('/admin.php?page='.self::$slugPage)
+            'href' => admin_url('/admin.php?page='.$this->slug)
         );
-        $argsParent['title'] = self::$title;
+        $argsParent['title'] = $this->title;
 
         $wp_admin_bar->add_menu($argsParent, 1000);
     }

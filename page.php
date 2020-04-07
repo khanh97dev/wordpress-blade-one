@@ -1,1 +1,1 @@
-<?= view('partials.pages.page') ?>
+<?= view('partials.page') ?>

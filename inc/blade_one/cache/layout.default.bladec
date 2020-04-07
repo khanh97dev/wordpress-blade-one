@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html <?php echo static::e(language_attributes()); ?> >
-<!-- Mirrored from www.vng.com.vn/article/about/history.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Dec 2018 11:45:47 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<?php echo $this->yieldPushContent('styles'); ?>
+<?php echo $this->runChild('partials.header'); ?>
 
-<head>
- <meta charset="<?php echo static::e(bloginfo( 'charset' )); ?>">
- <meta name="site" content="<?php echo static::e(bloginfo( 'name' )); ?>">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta charset="utf-8" />
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name=viewport content="width=device-width, initial-scale=1">
- <link href="<?php echo static::e(bloginfo('template_url')); ?>/assets/css/skin-subpage.min.css" rel="stylesheet" media="screen" />
- <?php /* <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/assets/css/ma5-menu.min.css"> */ ?>
- <link rel="StyleSheet" href="<?php echo static::e(bloginfo( 'template_url' )); ?>/style.css">
- <?php echo $this->runChild('sections.blogs.style'); ?>
- <?php /* hook wp header */ ?>
+<?php echo $this->yieldContent("content"); ?>
 
- <?php echo static::e(wp_head()); ?>
-
-
- <?php /* end */ ?>
-</head>
-<body <?php echo static::e(body_class('')); ?>>
-
- <?php echo $this->yieldContent('content'); ?>
-
- <?php echo static::e(wp_footer()); ?>
-
-</body>
-
-</html>
+<?php echo $this->runChild('partials.footer'); ?>
+<?php echo $this->yieldPushContent('scripts'); ?>

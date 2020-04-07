@@ -1,76 +1,26 @@
-<footer class="s-footer bg-steelgray">
- <div class="container f-mavenpro">
- <div class="row">
- <div class="col-12 text-center">
- <h2 class="text-steelgray f-unisect text-center text-light">
- <?php echo static::e(get_theme_mod('setting_section_footer[title]', 'CÔNG TY TRÁCH NHIỆM HỮU HẠN LIÊN KẾT Y TẾ VIỆT')); ?>
+ </div><!-- #main -->
 
- </h2>
- </div>
- <div class="container-fluid">
- <div class="row">
- <div class="col-12 my-1 text-light">
- <strong>
- <i class="fa fa-address-book"></i>
- <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
- Address:
- <?php else: ?>
- Địa Chỉ:
- <?php endif; ?>
- </strong>
- <?php if(!empty(get_theme_mod('setting_section_footer'))): ?>
- <?php echo static::e(get_theme_mod('setting_section_footer', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, minima.')['dia_chi']); ?>
+ <footer id="colophon" class="site-footer" role="contentinfo">
+
+ <?php echo $this->runChild('partials.sidebar-footer'); ?>
+
+ <div class="site-info">
+ <?php echo static::e(do_action( 'twentyfourteen_credits' )); ?>
+
+ <?php if(function_exists( 'the_privacy_policy_link' )): ?>
+ <?php echo static::e(the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' )); ?>
 
  <?php endif; ?>
- </div>
- <div class="col-md-4 col-12 my-1 text-light">
- <strong>
- <i class="fa fa-phone"></i>
- <?php if(function_exists('pll_the_languages') && pll_the_languages(array('raw'=>1))['en']['current_lang']): ?>
- Phone:
- <?php else: ?>
- Điện Thoại:
- <?php endif; ?>
- </strong>
- <a class="text-supernova" href="tel: <?php echo static::e(get_theme_mod('setting_section_footer', '000')['dien_thoai']); ?>">
- <?php if(!empty(get_theme_mod('setting_section_footer'))): ?>
- <?php echo static::e(get_theme_mod('setting_section_footer', '000')['dien_thoai']); ?>
-
- <?php endif; ?>
- </a>
- </div>
- <div class="col-md-4 col-12 my-1 text-light">
- <strong>
- <i class="fa fa-fax"></i>
- Fax:
- </strong>
- <?php if(!empty(get_theme_mod('setting_section_footer'))): ?>
- <?php echo static::e(get_theme_mod('setting_section_footer', '000')['fax']); ?>
-
- <?php endif; ?>
- </div>
- <div class="col-md-4 col-12 my-1 text-light">
- <strong>
- @ Email:
- </strong>
- <?php if(!empty(get_theme_mod('setting_section_footer'))): ?>
- <a class="text-supernova" href="mailto: <?php echo static::e(get_theme_mod('setting_section_footer', 'example@email.com')['email']); ?>">
- <?php echo static::e(get_theme_mod('setting_section_footer', 'example@email.com')['email']); ?>
+ <a href="<?php echo static::e(esc_url( __( 'https://wordpress.org/', 'twentyfourteen' ) )); ?>" class="imprint">
+ <?php /* translators: %s: WordPress */ ?>
+ <?php echo static::e(printf( __( 'Proudly powered by %s', 'twentyfourteen' ), 'WordPress' )); ?>
 
  </a>
- <?php else: ?>
- <a class="text-supernova" href="mailto: email@email.com">
- email
- </a>
- <?php endif; ?>
- </div>
- </div>
- </div>
+ </div><!-- .site-info -->
+ </footer><!-- #colophon -->
+ </div><!-- #page -->
+ <?php echo $this->runChild('components.script'); ?>
+ <?php echo static::e(wp_footer()); ?>
 
- <div class="footer-copyright col-12 text-center my-1 text-light">
- Copyright &copy; <?php echo static::e(date('Y')); ?> <a class="text-supernova" href="<?php echo static::e(bloginfo('url')); ?>"><?php echo static::e(bloginfo('name')); ?></a>. All right reserved.
- </div>
- </div>
- </div>
-</footer>
-
+</body>
+</html>

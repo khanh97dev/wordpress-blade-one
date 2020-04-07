@@ -3,18 +3,8 @@ namespace Inc;
 final class EnqueueScript {
     public function __construct() {
         $this->dirBase = get_template_directory_uri() . '/static/';
-        if(is_admin()){
-            add_action('admin_enqueue_scripts', array($this, 'enqueueScriptsAdmin'));
-        } else {
-            add_action( 'init', array($this, 'enqueueScriptsCustomzie') );
-        }
+        add_action( 'init', array($this, 'enqueueScriptsCustomzie') );
     }
-
-    public function enqueueScriptsAdmin($hook)
-    {
-        wp_enqueue_script('admin_script', $this->dirBase . 'js/admin.js');
-    }
-
 
     /**
      * style, script with customize preview

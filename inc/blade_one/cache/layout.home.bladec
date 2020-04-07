@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html <?php echo static::e(language_attributes()); ?> >
+<?php echo $this->yieldPushContent('styles'); ?>
+<?php echo $this->runChild('partials.header'); ?>
 
-<head>
- <meta charset="<?php echo static::e(bloginfo( 'charset' )); ?>">
- <meta name="site" content="<?php echo static::e(bloginfo( 'name' )); ?>">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta charset="utf-8" />
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <?php echo $this->runChild('components.homepages.style'); ?>
+<?php echo $this->yieldContent("content"); ?>
 
- <?php echo $this->yieldPushContent('styles'); ?>
- <?php echo static::e(wp_head()); ?>
-
-</head>
-<body <?php echo static::e(body_class('')); ?>>
- <?php echo $this->yieldContent("content"); ?>
- <?php echo static::e(wp_footer()); ?>
-
- <?php echo $this->yieldPushContent('scripts'); ?>
-</body>
-
-</html>
+<?php echo $this->runChild('partials.footer'); ?>
+<?php echo $this->yieldPushContent('scripts'); ?>

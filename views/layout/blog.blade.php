@@ -32,8 +32,6 @@
 
     @include('components.blogs.script')
 
-    @include('partials.script')
-
     {{ wp_footer() }}
 </body>
 

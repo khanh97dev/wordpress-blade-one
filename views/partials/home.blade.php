@@ -1,53 +1,58 @@
 @extends('layout.home')
 
 @section('content')
-    @include('components.homepages.navigation')
+    <div id="main-content" class="main-content">
 
-    @include('components.homepages.header')
-
-    @if (get_theme_mod('setting_section_number_visible'))
-        @include('components.homepages.section-number')
+    @if ( is_front_page() ) {
+      @include( 'partials.featured-content' );
     @endif
+      <div id="primary" class="content-area">
+        <div id="content" class="site-content" role="main">
 
-    @if (get_theme_mod('setting_section_products_visible'))
-        @include('components.homepages.section-products')
-    @endif
+        <?php
+        if ( have_posts() ) :
+          // Start the Loop.
+          while ( have_posts() ) :
+            the_post();
 
-    @if (get_theme_mod('setting_section_about_visible'))
-        @include('components.homepages.section-about')
-    @endif
+            /*
+             * Include the post format-specific template for the content. If you want
+             * to use this in a child theme, then include a file called content-___.php
+             * (where ___ is the post format) and that will be used instead.
+             */
+            if(get_post_format())
+              echo view('partials.content-'.get_post_format());
+            else
+              echo view('partials.content-none');
 
-    @if (get_theme_mod('setting_section_history_visible'))
-        @include('components.homepages.section-history')
-    @endif
+            endwhile;
+          // Previous/next post navigation.
 
-    @include('components.homepages.section-news')
+          else :
+            // If no content, include the "No posts found" template.
+            echo view('partials.content');
 
-    @if (get_theme_mod('setting_section_career_visible'))
-        @include('components.homepages.section-career')
-    @endif
+          endif;
+          ?>
 
-    @if (get_theme_mod('setting_section_partner_visible'))
-        @include('components.homepages.section-partner')
-    @endif
-
-    @include('partials.footer')
-
-    @include('components.homepages.script')
-
-    @include('partials.script')
+        </div><!-- #content -->
+      </div><!-- #primary -->
+      @include('partials.sidebar-content')
+    </div><!-- #main-content -->
 @endsection
 
 
 @push('scripts')
 <script>
+if(document.getElementById('something')){
     const VueTest = new Vue({
-      el: '#something',
+        el: '#something',
         data: () => {
-          return {
-            something: 'text something'
-          }
+            return {
+                something: 'text something'
+            }
         }
     })
+}
 </script>
 @endpush
