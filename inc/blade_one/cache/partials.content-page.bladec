@@ -1,0 +1,23 @@
+<article id="post-<?php echo static::e(the_ID()); ?>" <?php echo static::e(post_class()); ?>>
+ <?php echo static::e(twentyfourteen_post_thumbnail()); ?>
+
+ <?php /*  Page thumbnail and title. */ ?>
+ <?php echo static::e(the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' )); ?>
+
+
+ <div class="entry-content">
+ <?php
+ the_content();
+ wp_link_pages(
+ array(
+ 'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+ 'after'       => '</div>',
+ 'link_before' => '<span>',
+ 'link_after'  => '</span>',
+ )
+ );
+
+ edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
+ ?>
+ </div><!-- .entry-content -->
+</article><!-- #post-<?php echo static::e(the_ID()); ?> -->

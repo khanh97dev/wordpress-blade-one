@@ -1,0 +1,11 @@
+<script src="<?php echo static::e(get_template_directory_uri(). '/static/js/custom.js'); ?>"></script>
+<script src="<?php echo static::e(get_template_directory_uri(). '/static/js/html5.js'); ?>"></script>
+<script src="<?php echo static::e(get_template_directory_uri(). '/static/js/functions.js'); ?>"></script>
+<script src="<?php echo static::e(get_template_directory_uri(). '/static/js/keyboard-image-navigation.js'); ?>"></script>
+<script src="<?php echo static::e(get_template_directory_uri(). '/static/js/app.js'); ?>"></script>
+
+
+<?php /* <script src="<?php echo static::e(get_template_directory_uri(). '/static/js/featured-content-admin.js'); ?>"></script> */ ?>
+<?php /* <script src="<?php echo static::e(get_template_directory_uri(). '/static/js/main.js'); ?>"></script> */ ?>
+<?php /* <script src="<?php echo static::e(get_template_directory_uri(). '/static/js/slider.js'); ?>"></script> */ ?>
+<?php /* <script src="<?php echo static::e(get_template_directory_uri(). '/static/js/customizer.js'); ?>"></script> */ ?>
