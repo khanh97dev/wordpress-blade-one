@@ -1,1 +1,1 @@
-<?= view('sections.blogs.content') ?>
+<?= view('partials.single') ?>

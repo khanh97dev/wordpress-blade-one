@@ -2,7 +2,7 @@
 
     <footer id="colophon" class="site-footer" role="contentinfo">
 
-      @include('partials.sidebar-footer')
+      @include('partials.sidebar')
 
       <div class="site-info">
         {{ do_action( 'twentyfourteen_credits' ) }}

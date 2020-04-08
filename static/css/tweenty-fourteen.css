@@ -3101,7 +3101,6 @@ a.post-thumbnail:hover {
 /* Slider */
 
 .slider .featured-content .hentry {
-	-webkit-backface-visibility: hidden;
 	display: none;
 	position: relative;
 }

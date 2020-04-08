@@ -2,7 +2,7 @@
 
  <footer id="colophon" class="site-footer" role="contentinfo">
 
- <?php echo $this->runChild('partials.sidebar-footer'); ?>
+ <?php echo $this->runChild('partials.sidebar'); ?>
 
  <div class="site-info">
  <?php echo static::e(do_action( 'twentyfourteen_credits' )); ?>

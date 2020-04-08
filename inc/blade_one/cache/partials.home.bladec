@@ -20,17 +20,18 @@
  * to use this in a child theme, then include a file called content-___.php
  * (where ___ is the post format) and that will be used instead.
  */
- if(get_post_format())
+ if(get_post_format()) {
  echo view('partials.content-'.get_post_format());
- else
- echo view('partials.content-none');
+ }
+ else {
+ echo view('partials.content');
+ }
 
  endwhile;
  // Previous/next post navigation.
 
  else :
- // If no content, include the "No posts found" template.
- echo view('partials.content');
+ echo view('partials.content-none');
 
  endif;
  ?>

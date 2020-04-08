@@ -4,37 +4,3 @@ description: Create by hkdark, use Blade for laravel, npm mix,
 Version: 1.0
 Author: hkdark 2
 */
-
-.f-unisect,.ma5menu__container {
-    font-family: "Unisect Vnu" !important;
-}
-ul, li{
-    padding: 0;
-    margin: 0;
-}
-.my-1{
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-.my-2{
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-.my-3{
-    margin-top: 3em;
-    margin-bottom: 3em;
-}
-.my-4{
-    margin-top: 4em;
-    margin-bottom: 4em;
-}
-.product-item-title, .product-title{ text-transform: capitalize;  }
-/* --- Mobile ---*/
-@media screen and (max-width: 844px){
-    header.s-header div.pagename{
-        font-size: 25px !important;
-    }
-    header.s-header div.breadscrum ul li a span{
-        font-size: 17px !important;
-    }
-}
