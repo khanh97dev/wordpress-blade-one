@@ -17,7 +17,7 @@
         "bootstrap": "^4.4.1",
         "bootstrap-vue": "^2.0.0-rc.11",
         "cross-env": "^5.2.0",
-        "jquery": "^3.3.1",
+        "jquery": "^3.5.0",
         "laravel-mix": "^3.0.0",
         "vue": "^2.5.21",
         "vue-loader": "^14.2.2",
